@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removerReservation } from '../feaures/reservationSlice';
 import { addCustomer } from '../feaures/customerSlice';
+
 interface ReservationCardTypes {
   name: string;
   index: number;

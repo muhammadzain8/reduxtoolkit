@@ -13,15 +13,19 @@ function App() {
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
   );
+
   const customers = useSelector(
     (state: RootState) => state.customers.value
   );
 
   const handleAddReservation = () => {
     if (!input) return;
+    //
     dispatch(addReservation(input));
+    //
     setInput('');
   };
+
   return (
     <div className='App'>
       <div className='container'>
@@ -45,7 +49,13 @@ function App() {
       </div>
       <div className='customer-food-container'>
         {customers.map((customer) => {
-          return <CustomerCard id={customer.id} name={customer.name} food={customer.food}/>;
+          return (
+            <CustomerCard
+              id={customer.id}
+              name={customer.name}
+              food={customer.food}
+            />
+          );
         })}
       </div>
     </div>
